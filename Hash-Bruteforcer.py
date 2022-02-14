@@ -3,9 +3,6 @@ import random
 import secrets
 import string
 from time import sleep
-import tkinter
-
-### UI
 
 ### Modules
 MenuInput = 0
@@ -26,6 +23,10 @@ def ModuleMenu():
    print("\n [5] SHA512")
    sleep(0.10)
    print("\n [6] MD5")
+   sleep(0.10)
+   print("\n [7] Blake2b")
+   sleep(0.10)
+   print("\n [8] Blake2s")
    sleep(0.10)
    print("\n [0] Exit")
 ModuleMenu()
@@ -183,6 +184,56 @@ def MD5():                                                              #MD5 Bru
       else:
          continue
 
+def Blake2b():                                                              #MD5 Bruteforce Module                         
+
+   encoded_password = input("Enter your Blake2b encrypted password:\t")
+
+   charcount = input("\nAbout how many characters is your users password?\t")
+   charcount = int(charcount)
+   charcount = (charcount + 1)
+
+   encoded_string = 0
+
+   while encoded_password != encoded_string:
+      charrange = random.randrange(1,charcount)
+
+      randstring = (''.join(secrets.choice(string.ascii_uppercase + string.ascii_lowercase) for i in range(charrange)))
+
+      result2 = hashlib.blake2b(randstring.encode())
+
+      encoded_string = (result2.hexdigest())
+
+      if (encoded_password == encoded_string):
+         print(input("\nThe retard's password is:\t" + randstring))
+         break
+      else:
+         continue
+
+def Blake2s():                                                              #MD5 Bruteforce Module                         
+
+   encoded_password = input("Enter your Blake2s encrypted password:\t")
+
+   charcount = input("\nAbout how many characters is your users password?\t")
+   charcount = int(charcount)
+   charcount = (charcount + 1)
+
+   encoded_string = 0
+
+   while encoded_password != encoded_string:
+      charrange = random.randrange(1,charcount)
+
+      randstring = (''.join(secrets.choice(string.ascii_uppercase + string.ascii_lowercase) for i in range(charrange)))
+
+      result2 = hashlib.blake2s(randstring.encode())
+
+      encoded_string = (result2.hexdigest())
+
+      if (encoded_password == encoded_string):
+         print(input("\nThe retard's password is:\t" + randstring))
+         break
+      else:
+         continue
+
 def MenuControl():   
    if MenuInput == 1:
       SHA1()
@@ -196,6 +247,10 @@ def MenuControl():
       SHA512()
    elif MenuInput == 6:
       MD5()
+   elif MenuInput == 7:
+      Blake2b()
+   elif MenuInput == 8:
+      Blake2s()
    elif MenuInput == 0:
       exit
 MenuControl()
