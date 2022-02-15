@@ -243,7 +243,7 @@ def Blake2s():                                                              #MD5
       else:
          continue
       
-def Base16():
+def Base16():                                                              #Base16 Decode Module 
    
    encoded_password = input("\nEnter your Base16 encoded password:\t")
    
@@ -253,7 +253,7 @@ def Base16():
    
    print(input("\nThe retard's password is:\t" + str(password)))
       
-def Base32():
+def Base32():                                                              #Base32 Decode Module
    
    encoded_password = input("\nEnter your Base32 encoded password:\t")
    
@@ -264,7 +264,7 @@ def Base32():
    print(input("\nThe retard's password is:\t" + str(password)))
    
       
-def Base64():
+def Base64():                                                              #Base64 Decode Module
    
    encoded_password = input("\nEnter your Base64 encoded password:\t")
    
@@ -274,7 +274,7 @@ def Base64():
    
    print(input("\nThe retard's password is:\t" + str(password)))
    
-def Base85():
+def Base85():                                                              #Base85 Decode Module
    
    encoded_password = input("\nEnter your Base85 encoded password:\t")
    
@@ -284,7 +284,7 @@ def Base85():
    
    print(input("\nThe retard's password is:\t" + str(password)))
 
-def MenuControl():   
+def MenuControl():
    if MenuInput == 1:
       SHA1()
    elif MenuInput == 2:
