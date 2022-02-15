@@ -3,6 +3,7 @@ import random
 import secrets
 import string
 from time import sleep
+import base64
 
 ### Modules
 MenuInput = 0
@@ -27,6 +28,14 @@ def ModuleMenu():
    print("\n [7] Blake2b")
    sleep(0.10)
    print("\n [8] Blake2s")
+   sleep(0.10)
+   print("\n [9] Base16")
+   sleep(0.10)
+   print("\n [10] Base32")
+   sleep(0.10)
+   print("\n [11] Base64")
+   sleep(0.10)
+   print("\n [12] Base85")
    sleep(0.10)
    print("\n [0] Exit")
 ModuleMenu()
@@ -233,6 +242,47 @@ def Blake2s():                                                              #MD5
          break
       else:
          continue
+      
+def Base16():
+   
+   encoded_password = input("\nEnter your Base16 encoded password:\t")
+   
+   password = base64.b16decode(encoded_password)
+   
+   password = password.decode('ascii')
+   
+   print(input("\nThe retard's password is:\t" + str(password)))
+      
+def Base32():
+   
+   encoded_password = input("\nEnter your Base32 encoded password:\t")
+   
+   password = base64.b32decode(encoded_password)
+   
+   password = password.decode('ascii')
+   
+   print(input("\nThe retard's password is:\t" + str(password)))
+   
+      
+def Base64():
+   
+   encoded_password = input("\nEnter your Base64 encoded password:\t")
+   
+   password = base64.b64decode(encoded_password)
+   
+   password = password.decode('ascii')
+   
+   print(input("\nThe retard's password is:\t" + str(password)))
+   
+def Base85():
+   
+   encoded_password = input("\nEnter your Base85 encoded password:\t")
+   
+   password = base64.a85decode(encoded_password)
+   
+   password = password.decode('ascii')
+   
+   print(input("\nThe retard's password is:\t" + str(password)))
 
 def MenuControl():   
    if MenuInput == 1:
@@ -251,6 +301,14 @@ def MenuControl():
       Blake2b()
    elif MenuInput == 8:
       Blake2s()
+   elif MenuInput == 9:
+      Base16()
+   elif MenuInput == 10:
+      Base32()
+   elif MenuInput == 11:
+      Base64()
+   elif MenuInput == 12:
+      Base85()
    elif MenuInput == 0:
       exit
 MenuControl()
