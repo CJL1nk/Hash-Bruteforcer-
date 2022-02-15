@@ -145,7 +145,7 @@ def SHA384():                                                              #SHA3
 
 def SHA512():                                                              #SHA512 Bruteforce Module                         
 
-   encoded_password = input("Enter your SHA512 encrypted password:\t")
+   encoded_password = input("\nEnter your SHA512 encrypted password:\t")
 
    charcount = input("\nAbout how many characters is your users password?\t")
    charcount = int(charcount)
@@ -170,7 +170,7 @@ def SHA512():                                                              #SHA5
 
 def MD5():                                                              #MD5 Bruteforce Module                         
 
-   encoded_password = input("Enter your MD5 encrypted password:\t")
+   encoded_password = input("\nEnter your MD5 encrypted password:\t")
 
    charcount = input("\nAbout how many characters is your users password?\t")
    charcount = int(charcount)
@@ -195,7 +195,7 @@ def MD5():                                                              #MD5 Bru
 
 def Blake2b():                                                              #MD5 Bruteforce Module                         
 
-   encoded_password = input("Enter your Blake2b encrypted password:\t")
+   encoded_password = input("\nEnter your Blake2b encrypted password:\t")
 
    charcount = input("\nAbout how many characters is your users password?\t")
    charcount = int(charcount)
@@ -220,7 +220,7 @@ def Blake2b():                                                              #MD5
 
 def Blake2s():                                                              #MD5 Bruteforce Module                         
 
-   encoded_password = input("Enter your Blake2s encrypted password:\t")
+   encoded_password = input("\nEnter your Blake2s encrypted password:\t")
 
    charcount = input("\nAbout how many characters is your users password?\t")
    charcount = int(charcount)
